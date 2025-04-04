@@ -38,7 +38,7 @@ const Hero = (props) => {
               </button>
               <button
                 onClick={() => props.scrollToSection("contact")}
-                className="border-2 border-indigo-400 text-indigo-400 hover:bg-gray-800 px-8 py-3 rounded-lg transition-all duration-300 !rounded-button whitespace-nowrap cursor-pointer"
+                className="border-2 border-indigo-400 text-indigo-400 hover:bg-gray-800 hover:text-white px-8 py-3 rounded-lg transition-all duration-300 !rounded-button whitespace-nowrap cursor-pointer"
               >
                 Get in Touch
               </button>

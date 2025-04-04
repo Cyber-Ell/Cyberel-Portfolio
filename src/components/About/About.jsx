@@ -19,7 +19,7 @@ const About = () => {
             <div className="md:w-1/2">
               <img
                 src="https://public.readdy.ai/ai/img_res/a2414facef7db822760c5aa8ade718fe.jpg"
-                alt="Jeremiah A GAmbo- Front-End Developer"
+                alt="Jeremiah A Gambo- Front-End Developer"
                 className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
             </div>
