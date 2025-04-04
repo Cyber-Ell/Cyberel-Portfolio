@@ -1,5 +1,6 @@
 import React from 'react'
 import { projects } from '../../Projects'
+
 const Project = () => {
 
   const [projectDisplay, SetProjectDisplay] = React.useState(projects)
@@ -11,9 +12,7 @@ const Project = () => {
     SetProjectDisplay(filtered)
   }
 
-  const projecttPills = (e) => { 
-
-  }
+  console.log("this is the projectDisplay", projectDisplay)
 
 
 
@@ -63,9 +62,11 @@ const Project = () => {
     </div>
   ))
 
+  const [activeFilter, setActiveFilter] = React.useState("All Projects");
+
   return (
     <div>
-       <section id="projects" className="py-20 bg-gray-800">
+      <section id="projects" className="py-20 bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-100">
@@ -76,18 +77,58 @@ const Project = () => {
               A showcase of my recent work and the technologies I've used.
             </p>
           </div>
-          <div onClick={() => filteredProjects(projects)} className="mb-8 flex justify-center">
-            <div className="inline-flex rounded-md shadow-sm ">
-              <button  className="px-4 py-2 text-sm font-medium text-whit  bg-indigo-600 rounded-l-lg hover:bg-indigo-700 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
+          <div className="mb-8 flex justify-center">
+            <div className="inline-flex rounded-md shadow-sm">
+              <button
+                onClick={() => {
+                  SetProjectDisplay(projects);
+                  setActiveFilter("All Projects");
+                }}
+                className={`px-4 py-2 text-sm font-medium ${
+                  activeFilter === "All Projects"
+                    ? "bg-indigo-700 text-white"
+                    : "bg-gray-700 text-gray-300"
+                } rounded-l-lg border border-gray-600 hover:bg-indigo-700 focus:outline-none whitespace-nowrap cursor-pointer`}
+              >
                 All Projects
               </button>
-              <button onClick={() => filteredProjects("React")} className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 hover:bg-gray-600 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
+              <button
+                onClick={() => {
+                  filteredProjects("React");
+                  setActiveFilter("React");
+                }}
+                className={`px-4 py-2 text-sm font-medium ${
+                  activeFilter === "React"
+                    ? "bg-indigo-700 text-white"
+                    : "bg-gray-700 text-gray-300"
+                } border border-gray-600 hover:bg-indigo-700 focus:outline-none whitespace-nowrap cursor-pointer`}
+              >
                 React
               </button>
-              <button onClick={() => filteredProjects("JavaScript")} className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 hover:bg-gray-600 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
+              <button
+                onClick={() => {
+                  filteredProjects("JavaScript");
+                  setActiveFilter("JavaScript");
+                }}
+                className={`px-4 py-2 text-sm font-medium ${
+                  activeFilter === "JavaScript"
+                    ? "bg-indigo-700 text-white"
+                    : "bg-gray-700 text-gray-300"
+                } border border-gray-600 hover:bg-indigo-700 focus:outline-none whitespace-nowrap cursor-pointer`}
+              >
                 JavaScript
               </button>
-              <button onClick={() => filteredProjects("HTML5"  || "CSS3")} className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-r-lg hover:bg-gray-600 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
+              <button
+                onClick={() => {
+                  filteredProjects("HTML5");
+                  setActiveFilter("HTML5");
+                }}
+                className={`px-4 py-2 text-sm font-medium ${
+                  activeFilter === "HTML5"
+                    ? "bg-indigo-700 text-white"
+                    : "bg-gray-700 text-gray-300"
+                } rounded-r-lg border border-gray-600 hover:bg-indigo-700 focus:outline-none whitespace-nowrap cursor-pointer`}
+              >
                 HTML/CSS
               </button>
             </div>
@@ -98,7 +139,7 @@ const Project = () => {
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 export default Project
