@@ -11,7 +11,9 @@ const Project = () => {
     SetProjectDisplay(filtered)
   }
 
-  console.log("this is the projectDisplay", projectDisplay)
+  const projecttPills = (e) => { 
+
+  }
 
 
 
@@ -74,9 +76,9 @@ const Project = () => {
               A showcase of my recent work and the technologies I've used.
             </p>
           </div>
-          <div className="mb-8 flex justify-center">
+          <div onClick={() => filteredProjects(projects)} className="mb-8 flex justify-center">
             <div className="inline-flex rounded-md shadow-sm ">
-              <button className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-l-lg hover:bg-indigo-700 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
+              <button  className="px-4 py-2 text-sm font-medium text-whit  bg-indigo-600 rounded-l-lg hover:bg-indigo-700 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
                 All Projects
               </button>
               <button onClick={() => filteredProjects("React")} className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 hover:bg-gray-600 focus:outline-none !rounded-button whitespace-nowrap cursor-pointer">
