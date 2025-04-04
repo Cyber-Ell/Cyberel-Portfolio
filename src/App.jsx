@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -7,11 +7,13 @@ import Skills from "./components/Skills/Skills";
 import Project from "./components/Projects/Project";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import Loader from "./components/Loader/Loader";
 
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState("home");
+  const [isLoading, setIsLoading] = React.useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -22,7 +24,15 @@ const App = () => {
       setActiveSection(sectionId);
       setIsMenuOpen(false);
     }
+
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(true);
+    }, 1000);
+  }, []);
+
   React.useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "about", "skills", "projects", "contact"];
@@ -46,7 +56,9 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="min-h-screen  bg-gray-900 text-gray-200 font-sans">
+    <>
+    {
+      isLoading ? <div className="min-h-screen  bg-gray-900 text-gray-200 font-sans">
       {/* Header/Navigation */}
       <Header activeSection={activeSection} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} scrollToSection={scrollToSection}/>
       {/* Hero Section */}
@@ -72,7 +84,9 @@ const App = () => {
       >
         <i className="fas fa-arrow-up"></i>
       </button>
-    </div>
+    </div> : <Loader className="m-auto absolute top-5"/>
+    }
+    </>
   );
 };
 export default App;

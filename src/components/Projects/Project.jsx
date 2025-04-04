@@ -4,6 +4,7 @@ import { projects } from '../../Projects'
 const Project = () => {
 
   const [projectDisplay, SetProjectDisplay] = React.useState(projects)
+  const [activeFilter, setActiveFilter] = React.useState("All Projects"); 
 
   const filteredProjects = (language) => {
     const filtered = projects.filter((project) =>
@@ -62,7 +63,7 @@ const Project = () => {
     </div>
   ))
 
-  const [activeFilter, setActiveFilter] = React.useState("All Projects");
+  
 
   return (
     <div>
