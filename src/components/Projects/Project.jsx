@@ -12,11 +12,7 @@ const Project = () => {
     )
     SetProjectDisplay(filtered)
   }
-
-  console.log("this is the projectDisplay", projectDisplay)
-
-
-
+  
   const projectList = projectDisplay.map((project, index) => (
     <div
       key={index}
