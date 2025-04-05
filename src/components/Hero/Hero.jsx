@@ -5,7 +5,7 @@ const Hero = (props) => {
     <div>
         <section
         id="home"
-        className="relative min-h-screen flex items-center pt-20"
+        className="relative min-h-screen flex items-center pt-16 sm:pt-20"
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
