@@ -12,7 +12,7 @@ const Project = () => {
     )
     SetProjectDisplay(filtered)
   }
-  
+
   const projectList = projectDisplay.map((project, index) => (
     <div
       key={index}
@@ -25,12 +25,12 @@ const Project = () => {
           className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-gray-100">
+      <div className="p-6 text-center sm:text-start">
+        <h3 className="text-xl  font-bold mb-2 text-gray-100">
           {project.title}
         </h3>
         <p className="text-gray-300 mb-4">{project.description}</p>
-        <div className="mb-4 flex flex-wrap gap-2">
+        <div className="mb-4 flex flex-wrap gap-2 justify-center sm:justify-start">
           {project.tech.map((tech, techIndex) => (
             <span
               key={techIndex}
@@ -40,7 +40,7 @@ const Project = () => {
             </span>
           ))}
         </div>
-        <div className="flex space-x-3">
+        <div className="flex space-x-3 justify-between sm:justify-start">
           <a
             href={project.demo}
             className="text-indigo-400 hover:text-indigo-300 font-medium flex items-center cursor-pointer"
