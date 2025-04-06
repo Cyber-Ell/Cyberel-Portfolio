@@ -9,7 +9,7 @@ const Header = (props) => {
             Jeremiah
           </a>
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 transition-all duration-300 ease-in-out">
             {["home", "about", "skills", "projects", "contact"].map((item) => (
               <button
                 key={item}

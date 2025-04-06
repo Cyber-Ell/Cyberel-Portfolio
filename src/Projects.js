@@ -6,8 +6,8 @@ export const projects = [
         image:
           "https://public.readdy.ai/ai/img_res/5bf31b85573f95fd9848ccdc33c60f87.jpg",
         tech: ["React", "Redux", "Tailwind CSS", "Chart.js"],
-        demo: "#",
-        github: "#",
+        demo: "https://ecommerce-dashbaord.vercel.app/",
+        github: "https://github.com/Cyber-Ell/Ecommerce-Dashbaord",
       },
       {
         title: "Travel Booking App",
