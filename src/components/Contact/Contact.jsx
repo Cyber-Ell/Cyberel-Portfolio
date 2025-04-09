@@ -1,6 +1,23 @@
 import React from 'react'
 
 const Contact = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault() // Prevent the default form submission behavior
+    const formData = new FormData(e.target) // Create a FormData object from the form
+    const name = formData.get('name') // Get the name field value
+    const email = formData.get('email') // Get the email field value
+    const message = formData.get('message') // Get the message field value
+
+  }
+  // Handle form submission logic here  (e.g., send data to an API, show a success message, etc.)
+  const inputFields = document.querySelectorAll('input, textarea') // Select all input and textarea fields
+  const resetInputFields = () => {
+    inputFields.forEach((field) => {
+      field.value = '' }
+    )}// Reset each field value to an empty string
+  // You can use libraries like Axios or Fetch API to send the data to your server  
+
   return (
     <div>
       <section id="contact" className="py-20 bg-gray-900">
@@ -17,7 +34,7 @@ const Contact = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-12">
             <div className="md:w-1/2">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
                     htmlFor="name"
@@ -30,6 +47,7 @@ const Contact = () => {
                     id="name"
                     className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-sm bg-gray-800 text-gray-200"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 <div>
@@ -44,6 +62,7 @@ const Contact = () => {
                     id="email"
                     className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-sm bg-gray-800 text-gray-200"
                     placeholder="Your email address"
+                    required
                   />
                 </div>
                 <div>
@@ -61,12 +80,13 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <button
-                  type="submit"
+                  onClick={resetInputFields}
                   className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-lg transition-colors duration-300 !rounded-button whitespace-nowrap cursor-pointer"
                 >
                   Send Message
                 </button>
               </form>
+
             </div>
             <div className="md:w-1/2">
               <div className="bg-gray-800 p-8 rounded-lg h-full">
@@ -117,25 +137,25 @@ const Contact = () => {
                   <div className="flex space-x-4">
                     <a
                       href="https://github.com/Cyber-Ell"
-                      className="bg-gray-700 hover:bg-gray-600 text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                      className="bg-gray-700 hover:bg-indigo-700 hover:text-white text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
                     >
                       <i className="fab fa-github"></i>
                     </a>
                     <a
                       href="https://www.linkedin.com/in/jeremiah-gambo-599a36242"
-                      className="bg-gray-700 hover:bg-gray-600 text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                      className="bg-gray-700 hover:bg-indigo-700 hover:text-white text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
                     >
                       <i className="fab fa-linkedin-in"></i>
                     </a>
                     <a
                       href="#"
-                      className="bg-gray-700 hover:bg-gray-600 text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                      className="bg-gray-700 hover:bg-indigo-700 hover:text-white text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
                     >
                       <i className="fab fa-twitter"></i>
                     </a>
                     <a
                       href="#"
-                      className="bg-gray-700 hover:bg-gray-600 text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                      className="bg-gray-700 hover:bg-indigo-700 hover:text-white text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
                     >
                       <i className="fab fa-dribbble"></i>
                     </a>
