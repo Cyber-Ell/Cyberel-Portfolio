@@ -15,13 +15,13 @@ const Footer = () => {
            
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://github.com/Cyber-Ell"
                 className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
               >
                 <i className="fab fa-github text-xl"></i>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/jeremiah-gambo-599a36242"
                 className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
               >
                 <i className="fab fa-linkedin-in text-xl"></i>
