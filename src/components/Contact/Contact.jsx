@@ -89,8 +89,8 @@ const Contact = () => {
 
             </div>
             <div className="md:w-1/2">
-              <div className="bg-gray-800 p-8 rounded-lg h-full">
-                <h3 className="text-2xl font-bold mb-6 text-gray-100">
+              <div className="bg-gray-800 sm:p-8 p-4 rounded-lg h-full">
+                <h3 className="text-2xl text-center sm:text-left font-bold mb-6 text-gray-100">
                   Contact Information
                 </h3>
                 <div className="space-y-6">
@@ -98,11 +98,11 @@ const Contact = () => {
                     <div className="text-indigo-400 mt-1 mr-4">
                       <i className="fas fa-envelope text-xl"></i>
                     </div>
-                    <div>
+                    <div className='flex flex-col'>
                       <h4 className="text-lg font-medium text-gray-100">
                         Email
                       </h4>
-                      <p className="text-gray-300">Jeremiahagambo2020@gmail.com</p>
+                      <p className="text-gray-300 ">Jeremiahagambo2020@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -131,10 +131,10 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="mt-8">
-                  <h4 className="text-lg font-medium text-gray-100 mb-4">
+                  <h4 className="text-lg text-center sm:text-left font-medium text-gray-100 mb-4">
                     Connect with me
                   </h4>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 sm:justify-start justify-center">
                     <a
                       href="https://github.com/Cyber-Ell"
                       className="bg-gray-700 hover:bg-indigo-700 hover:text-white text-gray-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer"
